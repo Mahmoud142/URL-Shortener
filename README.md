@@ -50,4 +50,14 @@ Follow these steps to set up the project locally:
 3. **Create a `.env` file in the root directory and add your MongoDB Atlas connection string as `DB_URL`**  
    ```bash
    touch .env
+## ⚡ Usage
+
+1. **Start the server by running this command**  
+   ```bash
+   node server.js
+2. **Open your browser and go to: `http://localhost:3000/`**
+
+## 🤝 Contributing
+
+We welcome contributions! Feel free to fork this repository, make improvements, and submit a pull request. 🚀  
 
