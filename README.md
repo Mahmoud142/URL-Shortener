@@ -26,4 +26,4 @@ url-shortener/
 │-- url-image.jpg         # Example image for documentation
 ```
 ## 📸 Screenshot
-![Screenshot Preview](./url-image.jpg)
+![Screenshot Preview](./main-page.jpg)
