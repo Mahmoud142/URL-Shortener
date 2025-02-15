@@ -24,4 +24,6 @@ url-shortener/
 │-- package-lock.json     # Lock file for dependencies
 │-- server.js             # Main entry point (starts Express server)
 │-- url-image.jpg         # Example image for documentation
-
+```
+## 📸 Screenshot
+![Screenshot Preview](./url-image.jpg)
