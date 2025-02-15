@@ -27,3 +27,27 @@ url-shortener/
 ```
 ## 📸 Screenshot
 ![Screenshot Preview](./main-page.jpg)
+
+## 🚀 Getting Started
+
+## 📌 Prerequisites
+Before you begin, ensure you have the following installed on your system:
+- **[Node.js](https://nodejs.org/)** installed on your local machine.
+- **[MongoDB Atlas](https://www.mongodb.com/atlas)** account for database hosting.
+
+## 🔧 Installation
+Follow these steps to set up the project locally:
+
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/Mahmoud142/URL-Shortener.git
+2. **Navigate to the project directory**  
+   ```bash
+   cd url-shortener
+3. **Install dependencies**  
+   ```bash
+   npm install
+3. **Create a `.env` file in the root directory and add your MongoDB Atlas connection string as `DB_URL`**  
+   ```bash
+   touch .env
+
