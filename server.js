@@ -12,6 +12,7 @@ connectDB.connect();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
+// route
 const urlRoutes = require('./routes/url.routes');
 app.use('/', urlRoutes);
 
