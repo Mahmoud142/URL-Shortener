@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3000;
 dotenv.config();
 connectDB.connect();
 
+// middleware
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
