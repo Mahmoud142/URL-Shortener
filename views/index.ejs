@@ -13,8 +13,9 @@
     <div class="container">
         <h1 class="text-center">URL Shortener</h1>
         <br>
-        <h4 class="text-center"> Paste the URL to be shortened</h3>
-            <form action="/shortUrls" method="POST" class="form-inline">
+        <h4 class="text-center">Please paste the URL you want to shorten or track an existing one.</h4>
+        <!-- <h4 class="text-center"> Paste the URL to be shortened</h4> -->
+            <form action="/" method="POST" class="form-inline">
                 <div class="input-group">
                     <input required type="url" id="longUrl" name="longUrl" placeholder="Enter the link here"
                         class="form-control">
@@ -37,7 +38,7 @@
                                     <%= shortUrl.longUrl %>
                                 </a></td>
                             <td><a href="<%=shortUrl.shortUrl %>">
-                                    http://localhost:3000/<%= shortUrl.shortUrl %>
+                                    <%= shortUrl.shortUrl %>
                                 </a></td>
                             <td>
                                 <%= shortUrl.clicks %>
