@@ -10,11 +10,12 @@ dotenv.config();
 
 // middleware
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 app.use(express.urlencoded({ extended: false }));
 
 const limiter = rateLimit({
     windowMs: 60 * 60 * 1000, // 1 hour
-    max: 10, // limit each IP to 10 requests per windowMs
+    max: 100, // limit each IP to 10 requests per windowMs
     standardHeaders: true,
     legacyHeaders: false,
 });
@@ -38,6 +39,9 @@ mongoose.connection.on('disconnected', () => {
     console.log('MongoDB disconnected');
     connect();
 });
+
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
