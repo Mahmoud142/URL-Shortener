@@ -1,10 +1,15 @@
 const express = require('express');
-const Router = express.Router();
+const router = express.Router();
 
 const {render , createUrl, redirectToLongUrl} = require('../controller/url.controller');
+const { urlValidator } = require('../utils/url.validator');
 
-Router.get('/', render);
-Router.post('/', createUrl);
-Router.get('/:shortUrl', redirectToLongUrl);
+router.route('/')
+    .get(render)
+    .post(urlValidator, createUrl);
 
-module.exports = Router;
+
+router.route('/:shortUrl')
+    .get(redirectToLongUrl);
+
+module.exports = router;
