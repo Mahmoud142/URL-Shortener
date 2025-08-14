@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const rateLimit = require('express-rate-limit');
 const connectDB = require('./config/db');
 
 const app = express();
@@ -11,10 +12,17 @@ dotenv.config();
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
+const limiter = rateLimit({
+    windowMs: 60 * 60 * 1000, // 1 hour
+    max: 10, // limit each IP to 10 requests per windowMs
+    standardHeaders: true,
+    legacyHeaders: false,
+});
+app.use(limiter);
+
 // route
 const urlRoutes = require('./routes/url.routes');
 app.use('/', urlRoutes);
-
 // error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);
