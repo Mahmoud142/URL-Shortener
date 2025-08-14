@@ -1,8 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const rateLimit = require('express-rate-limit');
-const connectDB = require('./config/db');
-
+const mongoose = require('mongoose');
+const {connect} = require('./config/db');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -29,7 +29,15 @@ app.use((err, req, res, next) => {
     res.status(500).send('Something went wrong!');
 });
 
+connect();
+// Handle connection errors
+mongoose.connection.on('error', (err) => {
+    console.error('MongoDB connection error:', err);
+});
+mongoose.connection.on('disconnected', () => {
+    console.log('MongoDB disconnected');
+    connect();
+});
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-    connectDB.connect();
 });
