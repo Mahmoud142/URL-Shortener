@@ -6,7 +6,6 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 dotenv.config();
-connectDB.connect();
 
 // middleware
 app.set('view engine', 'ejs');
@@ -18,4 +17,5 @@ app.use('/', urlRoutes);
 
 app.listen(PORT,()=> {
     console.log(`Server is running on port ${PORT}`);
+    connectDB.connect();
 })
